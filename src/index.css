@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F5E1BB;
+  --color-charcoal: #0D0909;
+  --color-peach: #F3B496;
+  --color-sage: #4A614F;
+  --color-teal: #698184;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
