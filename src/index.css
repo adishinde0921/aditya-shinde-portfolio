@@ -1,13 +1,24 @@
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
 @import "tailwindcss";
 
+/* Portfolio design tokens */
 @theme {
-  --color-cream: #F5E1BB;
-  --color-charcoal: #0D0909;
-  --color-peach: #F3B496;
-  --color-sage: #4A614F;
-  --color-teal: #698184;
+  --color-night: #0D0D0D;
+  --color-surface: #171513;
+  --color-bronze: #AC8968;
+  --color-ivory: #F5F0E8;
+  --color-muted: #A89D90;
+  --color-olive: #66705B;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+  --font-display: "Playfair Display", serif;
 }
 
+/* Global styles */
 * {
   box-sizing: border-box;
 }
@@ -20,4 +31,73 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: #0D0D0D;
+  color: #F5F0E8;
+  font-family: "DM Sans", sans-serif;
 }
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #AC8968;
+  color: #0D0D0D;
+}
+
+/* Subtle night atmosphere */
+.night-background {
+  background-color: #0D0D0D;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(172, 137, 104, 0.10), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(102, 112, 91, 0.10), transparent 35%),
+    radial-gradient(rgba(245, 240, 232, 0.12) 0.7px, transparent 0.7px);
+  background-size: auto, auto, 38px 38px;
+}
+
+/* Navbar link styling */
+.nav-link {
+  position: relative;
+  color: #A89D90;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #AC8968;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: #AC8968;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Large outlined name typography */
+.hero-outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(245, 240, 232, 0.75);
+  text-transform: uppercase;
+  letter-spacing: -0.09em;
+  line-height: 0.82;
+}
+
+/* Subtle transparent text effect */
+.hero-outline-text span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(172, 137, 104, 0.8);
+}
+
