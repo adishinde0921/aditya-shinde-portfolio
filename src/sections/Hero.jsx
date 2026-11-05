@@ -1,5 +1,6 @@
 
 import { motion } from "motion/react";
+import Footer from "../components/Footer";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 // CHANGE IMAGE SIZE HERE
@@ -167,7 +168,9 @@ function Hero() {
         <span className="text-[10px] uppercase tracking-[0.25em]">
           Scroll to explore
         </span>
+        
       </div>
+      <Footer />
     </section>
   );
 }

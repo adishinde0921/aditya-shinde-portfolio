@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import PullCord from "./PullCard";
 
+
 function IntroScreen({ onReveal }) {
   return (
     <motion.section
@@ -57,7 +58,8 @@ function IntroScreen({ onReveal }) {
           Portfolio · 2026
         </span>
       </div>
-
+      {/* Professional Identity Footer */}
+      
     </motion.section>
   );
 }

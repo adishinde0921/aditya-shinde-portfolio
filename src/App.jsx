@@ -5,6 +5,8 @@ import { AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import IntroScreen from "./components/IntroScreen";
 import Hero from "./sections/Hero";
+import About from "./sections/About";
+import SocialLinks from "./sections/SocialLinks";
 
 function App() {
   const [isRevealed, setIsRevealed] = useState(false);
@@ -20,7 +22,11 @@ function App() {
             onReveal={() => setIsRevealed(true)}
           />
         ) : (
-          <Hero key="portfolio" />
+          <div key="portfolio">
+            <Hero />
+            <About />
+            <SocialLinks />
+          </div>
         )}
       </AnimatePresence>
     </main>
