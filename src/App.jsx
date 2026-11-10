@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import SocialLinks from "./sections/SocialLinks";
+import Experience from "./sections/Experience";
+import Contact from "./sections/Contact";
+import FinalFooter from "./components/FinalFooter"
+
 
 function App() {
   return (
@@ -10,7 +14,10 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Experience />
       <SocialLinks />
+      <Contact />
+      <FinalFooter />
     </main>
   );
 }

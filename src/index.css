@@ -101,3 +101,8 @@ a {
   -webkit-text-stroke: 1.5px rgba(172, 137, 104, 0.8);
 }
 
+@layer components {
+  .footer-link {
+    @apply w-fit text-sm text-muted transition-colors duration-300 hover:text-bronze;
+  }
+}

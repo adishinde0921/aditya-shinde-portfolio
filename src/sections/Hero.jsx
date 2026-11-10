@@ -3,54 +3,45 @@ import { motion } from "motion/react";
 import Footer from "../components/Footer";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
-// CHANGE IMAGE SIZE HERE
-const PORTRAIT_WIDTH = 30;
-
-// Image path
 const PORTRAIT_IMAGE = "/images/Professional%20Portrait%20Cutout.png";
 
-// SVG composition dimensions
 const SVG_WIDTH = 1400;
 const SVG_HEIGHT = 650;
-
-// Automatic horizontal image position
-const IMAGE_X = (100 - PORTRAIT_WIDTH) / 2;
 
 function Hero() {
   return (
     <section
       id="home"
-      className="night-background relative min-h-screen overflow-hidden px-5 py-12 md:px-12"
+      className="night-background relative isolate min-h-screen overflow-hidden px-5 pb-8 pt-8 sm:px-8 md:px-12 md:pt-10"
     >
-      {/* Background glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-bronze/10 blur-[130px]" />
+      {/* BACKGROUND GLOW */}
+      <div className="pointer-events-none absolute left-1/2 top-1/4 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-bronze/10 blur-[100px] sm:h-96 sm:w-96 sm:blur-[130px]" />
 
-      {/* Professional heading */}
+      {/* ROLE HEADING */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 mt-5 text-center"
+        className="relative z-10 text-center"
       >
-        <p className="text-xs uppercase tracking-[0.35em] text-bronze">
+        <p className="text-[9px] uppercase tracking-[0.2em] text-bronze sm:text-xs sm:tracking-[0.35em]">
           Software Engineer · React Developer
         </p>
       </motion.div>
 
-      {/* Main composition */}
-      <div className="relative isolate mx-auto mt-12 -translate-y-12 h-[430px] w-full max-w-[1400px] sm:h-[520px] md:h-[650px]">
+      {/* PORTRAIT + NAME COMPOSITION */}
+      <div className="relative isolate mx-auto -mt-1 h-[390px] w-full max-w-[1400px] sm:mt-0 sm:h-[480px] md:h-[560px] lg:h-[620px]">
 
-        {/* Layer 1: Solid name behind image */}
+        {/* LAYER 1: NAME BEHIND PORTRAIT */}
         <svg
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
-          preserveAspectRatio="none"
-          className="absolute inset-0 z-10 h-full w-full overflow-visible"
-          aria-label="Aditya Shinde"
-          role="img"
+          preserveAspectRatio="xMidYMid meet"
+          className="absolute inset-0 z-10 h-full w-full"
+          aria-hidden="true"
         >
           <text
             x="700"
-            y="385"
+            y="430"
             textAnchor="middle"
             fontFamily="Montserrat, sans-serif"
             fontSize="150"
@@ -62,9 +53,9 @@ function Hero() {
           </text>
         </svg>
 
-        {/* Layer 2: Portrait */}
+        {/* LAYER 2: PORTRAIT */}
         <motion.img
-          initial={{ opacity: 0, y: 80 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.3,
@@ -74,17 +65,14 @@ function Hero() {
           src={PORTRAIT_IMAGE}
           alt="Aditya Shinde"
           draggable="false"
-          style={{
-            width: `${PORTRAIT_WIDTH}%`,
-          }}
-          className="absolute bottom-10 left-1/2 z-20 h-full -translate-x-1/2 object-contain object-bottom drop-shadow-2xl"
+          className="absolute bottom-0 left-1/2 z-20 h-[90%] w-[60%] -translate-x-1/2 object-contain object-bottom drop-shadow-2xl sm:w-[55%] md:w-[42%] lg:w-[35%]"
         />
 
-        {/* Layer 3: Text outline on portrait */}
+        {/* LAYER 3: NAME OUTLINE OVER PORTRAIT */}
         <svg
           viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
-          preserveAspectRatio="none"
-          className="pointer-events-none absolute inset-0 z-30 h-full w-full overflow-visible"
+          preserveAspectRatio="xMidYMid meet"
+          className="pointer-events-none absolute inset-0 z-30 h-full w-full"
           aria-hidden="true"
         >
           <defs>
@@ -99,9 +87,9 @@ function Hero() {
             >
               <image
                 href={PORTRAIT_IMAGE}
-                x={`${IMAGE_X}%`}
+                x="0"
                 y="0"
-                width={`${PORTRAIT_WIDTH}%`}
+                width={SVG_WIDTH}
                 height={SVG_HEIGHT}
                 preserveAspectRatio="xMidYMax meet"
               />
@@ -110,14 +98,14 @@ function Hero() {
 
           <text
             x="700"
-            y="385"
+            y="430"
             textAnchor="middle"
             fontFamily="Montserrat, sans-serif"
             fontSize="150"
             fontWeight="900"
             letterSpacing="-8"
             fill="none"
-            stroke="#5a5857"
+            stroke="#58514a"
             strokeWidth="2"
             mask="url(#portrait-alpha-mask)"
           >
@@ -126,23 +114,23 @@ function Hero() {
         </svg>
       </div>
 
-      {/* Introduction */}
+      {/* INTRODUCTION */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
-        className="relative z-40 mx-auto mt-6 flex max-w-[1400px] flex-col justify-between gap-6 md:flex-row md:items-end"
+        className="relative z-40 mx-auto mt-2 flex max-w-[1400px] flex-col gap-6 sm:mt-4 md:flex-row md:items-end md:justify-between"
       >
-        <div>
-          <p className="mb-2 text-xs uppercase tracking-[0.2em] text-bronze">
+        <div className="max-w-xl">
+          <p className="mb-2 text-[10px] uppercase tracking-[0.2em] text-bronze sm:text-xs">
             Hello, I am Aditya
           </p>
 
-          <h2 className="font-display text-2xl italic text-ivory md:text-4xl">
+          <h2 className="font-display text-2xl italic leading-tight text-ivory sm:text-3xl md:text-4xl">
             I build digital experiences.
           </h2>
 
-          <p className="mt-3 max-w-md text-sm leading-7 text-muted">
+          <p className="mt-3 max-w-md text-xs leading-6 text-muted sm:text-sm sm:leading-7">
             Computer Engineering graduate passionate about
             React.js, JavaScript and modern web development.
           </p>
@@ -150,10 +138,9 @@ function Hero() {
 
         <a
           href="#projects"
-          className="group flex w-fit items-center gap-3 rounded-full border border-bronze/50 px-6 py-3 text-xs uppercase tracking-wider text-ivory transition-all duration-300 hover:bg-bronze hover:text-night"
+          className="group inline-flex w-fit shrink-0 items-center gap-3 rounded-full border border-bronze/50 px-5 py-3 text-[10px] uppercase tracking-wider text-ivory transition-all duration-300 hover:bg-bronze hover:text-night sm:px-6 sm:text-xs"
         >
           Explore my work
-
           <ArrowUpRight
             size={16}
             className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -161,15 +148,14 @@ function Hero() {
         </a>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <div className="relative z-40 mt-12 flex items-center justify-center gap-3 text-muted">
+      {/* SCROLL INDICATOR */}
+      <div className="relative z-40 mt-10 flex items-center justify-center gap-3 text-muted sm:mt-12">
         <ArrowDown size={15} />
-
-        <span className="text-[10px] uppercase tracking-[0.25em]">
+        <span className="text-[9px] uppercase tracking-[0.25em] sm:text-[10px]">
           Scroll to explore
         </span>
-        
       </div>
+
       <Footer />
     </section>
   );
