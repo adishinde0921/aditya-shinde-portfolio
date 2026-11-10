@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aditya-shinde-portfolio-omega.vercel.app/sitemap.xml
